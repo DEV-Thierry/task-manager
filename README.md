@@ -27,48 +27,50 @@ Este é um projeto full-stack construído com **React (Vite/TypeScript)** para o
 O projeto adota uma arquitetura de "monorepo leve", com o frontend e o backend em pastas separadas na raiz do projeto.
 
 task-manager/
-├── task-manager-frontend/          # Projeto React (Vite + TypeScript)
+├── task-manager-frontend/             # Projeto React (Vite + TypeScript)
 │   ├── public/
 │   ├── src/
-│   │   ├── components/             # Componentes reutilizáveis
-│   │   ├── context/                # Contextos (ex: Auth)
-│   │   ├── factories/              # Design Pattern: Factory
-│   │   ├── hooks/                  # Custom hooks
-│   │   ├── models/                 # Modelos/Entidades
-│   │   ├── pages/                  # Páginas (Home, Login, Register, etc.)
-│   │   ├── routes/                 # Definições de rotas
-│   │   ├── services/               # Serviços/API (Axios)
-│   │   ├── strategies/             # Design Pattern: Strategy
-│   │   ├── theme/                  # Temas do Chakra UI
-│   │   ├── App.css
+│   │   ├── components/                # Componentes reutilizáveis
+│   │   ├── context/                   # Contextos (ex: Auth)
+│   │   ├── factories/                 # Design Pattern: Factory
+│   │   ├── hooks/                     # Custom hooks
+│   │   ├── models/                    # Modelos/Entidades
+│   │   ├── pages/                     # Páginas (Home, Login, Register, etc.)
+│   │   ├── routes/                    # Definições de rotas
+│   │   ├── services/                  # Serviços/API (Axios)
+│   │   ├── strategies/                # Design Pattern: Strategy
+│   │   ├── theme/                     # Temas do Chakra UI
+│   │   │   └── App.css
 │   │   ├── App.tsx
-│   │   ├── main.tsx                # Ponto de entrada do React
+│   │   ├── main.tsx                  # Ponto de entrada do React
 │   │   └── dockerfile
 │   ├── index.html
 │   ├── package.json
 │   └── tsconfig.json
 │
-└── task-manager-backend/           # Projeto C# (.NET Web API com Clean Architecture)
-    ├── task-manager.sln            # Solução .NET
-    ├── dockerfile
-    ├── Domain/                     # Camada de Domínio
-    │   ├── Entities/               # Entidades (Produto, Categoria, Usuário, etc.)
-    │   └── Interfaces/             # Contratos (interfaces de repositório)
-    ├── Application/                # Camada de Aplicação
-    │   ├── Commands/               # Casos de uso (ex: AuthCommands)
-    │   └── Services/               # Serviços usados pelos controllers
-    ├── Infrastructure/             # Camada de Infraestrutura
-    │   ├── Data/                   # DbContext
-    │   ├── Migrations/             # Migrations do banco de dados
-    │   └── Repositories/           # Implementações dos repositórios
-    ├── Presentation/               # Camada de Apresentação (API REST)
-    │   ├── Controllers/            # Endpoints da API
-    │   ├── Properties/
-    │   │   └── launchSettings.json # Configurações de execução (portas, etc.)
-    │   ├── appsettings.json        # Configurações da aplicação (Connection String, JWT)
-    │   ├── Program.cs              # Ponto de entrada da API, DI, Middlewares
-    │   └── Presentation.csproj
-    └── .gitignore
+├── task-manager-backend/              # Projeto C# (.NET Web API com Clean Architecture)
+│   ├── dockerfile
+│   ├── task-manager.sln               # Solução .NET
+│   ├── Domain/                        # Camada de Domínio
+│   │   ├── Entities/                  # Entidades (Produto, Categoria, Usuário, etc.)
+│   │   └── Interfaces/               # Contratos (interfaces de repositório)
+│   ├── Application/                   # Camada de Aplicação
+│   │   ├── Commands/                  # Casos de uso (ex: AuthCommands)
+│   │   └── Services/                  # Serviços usados pelos controllers
+│   ├── Infrastructure/                # Camada de Infraestrutura
+│   │   ├── Data/                      # DbContext
+│   │   ├── Migrations/                # Migrations do banco de dados
+│   │   └── Repositories/              # Implementações dos repositórios
+│   ├── Presentation/                  # Camada de Apresentação (API REST)
+│   │   ├── Controllers/               # Endpoints da API
+│   │   ├── Properties/
+│   │   │   └── launchSettings.json    # Configurações de execução (portas, etc.)
+│   │   ├── appsettings.json           # Configurações da aplicação (Connection String, JWT)
+│   │   ├── Program.cs                 # Ponto de entrada da API, DI, Middlewares
+│   │   └── Presentation.csproj
+│
+└── .gitignore
+
 
 ## 📋 Pré-requisitos
 
