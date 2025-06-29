@@ -26,6 +26,7 @@ Este é um projeto full-stack construído com **React (Vite/TypeScript)** para o
 
 O projeto adota uma arquitetura de "monorepo leve", com o frontend e o backend em pastas separadas na raiz do projeto.
 
+```
 task-manager/
 ├── task-manager-frontend/             # Projeto React (Vite + TypeScript)
 │   ├── public/
@@ -70,7 +71,7 @@ task-manager/
 │   │   └── Presentation.csproj
 │
 └── .gitignore
-
+```
 
 ## 📋 Pré-requisitos
 
