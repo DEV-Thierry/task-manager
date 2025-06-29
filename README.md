@@ -26,49 +26,49 @@ Este é um projeto full-stack construído com **React (Vite/TypeScript)** para o
 
 O projeto adota uma arquitetura de "monorepo leve", com o frontend e o backend em pastas separadas na raiz do projeto.
 
-[tasks-manager]/
-├── [tasks-manager]-frontend/ # Projeto React com Vite
-│ ├── public/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── context/ # Contexto de Autenticação
-│ │ ├── factories/ # Pattern Factory
-│ │ ├── hooks/ # hoos personalizados
-│ │ ├── models/ # Entidades
-│ │ ├── pages/ # Páginas (Home, Login, Register)
-│ │ ├── routes/ # Definições de rotas
-│ │ ├── services/ # Configuração do Axios para API
-│ │ ├── strategies/ # Pattern Strategy
-│ │ ├── theme/ # tema do chakra ui
-│ │ ├── App.css
-│ │ ├── App.tsx
-│ │ ├── dockerfile
-│ │ ├── main.tsx # Ponto de entrada do React
-│ ├── index.html
-│ ├── package.json
-│ └── tsconfig.json
+task-manager/
+├── task-manager-frontend/          # Projeto React (Vite + TypeScript)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/             # Componentes reutilizáveis
+│   │   ├── context/                # Contextos (ex: Auth)
+│   │   ├── factories/              # Design Pattern: Factory
+│   │   ├── hooks/                  # Custom hooks
+│   │   ├── models/                 # Modelos/Entidades
+│   │   ├── pages/                  # Páginas (Home, Login, Register, etc.)
+│   │   ├── routes/                 # Definições de rotas
+│   │   ├── services/               # Serviços/API (Axios)
+│   │   ├── strategies/             # Design Pattern: Strategy
+│   │   ├── theme/                  # Temas do Chakra UI
+│   │   ├── App.css
+│   │   ├── App.tsx
+│   │   ├── main.tsx                # Ponto de entrada do React
+│   │   └── dockerfile
+│   ├── index.html
+│   ├── package.json
+│   └── tsconfig.json
 │
-└── [tasks-manager]-backend/ # Projeto C# com Clean Architecture
-├── tasks-manager.sln # Arquivo de solução .NET
-├── dockerfile
-├── Domain/ # Camada de Domínio
-│ ├── Entities/ # Entidades do negócio (Produto, Categoria, Usuario customizado)
-│ └── Interfaces/ # Contratos (interfaces de repositórios)
-├── Application/ # Camada de Aplicação
-│ ├── Commands/ # Casos de uso de escrita (AuthCommands)
-│ └── Services/ # Service utilizado nos controllers
-├── Infrastructure/ # Camada de Infraestrutura
-│ ├── Data/ # DbContext
-│ ├── Migrations/ # Migrations do banco
-│ └── Repositories/ # Implementações de repositórios (ProdutoRepository, UserRepository)
-├── Presentation/ # Camada de Apresentação (API REST)
-│ ├── Controllers/ # Endpoints da API (AuthController, ProdutosController)
-│ ├── Properties/
-│ │ └── launchSettings.json # Configurações de execução (portas, abrir navegador)
-│ ├── appsettings.json # Configurações da aplicação (Connection Strings, JWT)
-│ ├── Program.cs # Ponto de entrada da API, configuração de DI e middlewares
-│ └── .csproj
-└── .gitignore
+└── task-manager-backend/           # Projeto C# (.NET Web API com Clean Architecture)
+    ├── task-manager.sln            # Solução .NET
+    ├── dockerfile
+    ├── Domain/                     # Camada de Domínio
+    │   ├── Entities/               # Entidades (Produto, Categoria, Usuário, etc.)
+    │   └── Interfaces/             # Contratos (interfaces de repositório)
+    ├── Application/                # Camada de Aplicação
+    │   ├── Commands/               # Casos de uso (ex: AuthCommands)
+    │   └── Services/               # Serviços usados pelos controllers
+    ├── Infrastructure/             # Camada de Infraestrutura
+    │   ├── Data/                   # DbContext
+    │   ├── Migrations/             # Migrations do banco de dados
+    │   └── Repositories/           # Implementações dos repositórios
+    ├── Presentation/               # Camada de Apresentação (API REST)
+    │   ├── Controllers/            # Endpoints da API
+    │   ├── Properties/
+    │   │   └── launchSettings.json # Configurações de execução (portas, etc.)
+    │   ├── appsettings.json        # Configurações da aplicação (Connection String, JWT)
+    │   ├── Program.cs              # Ponto de entrada da API, DI, Middlewares
+    │   └── Presentation.csproj
+    └── .gitignore
 
 ## 📋 Pré-requisitos
 
