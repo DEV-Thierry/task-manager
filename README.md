@@ -90,7 +90,7 @@ Este projeto adota uma estrutura de monorepo. Você pode configurá-lo e rodá-l
 ```
  docker-compose up --build
 ```
-4.  (opcional) # replica a API para 3 instâncias (load balancing)
+4.  (opcional)  replica a API para 3 instâncias (load balancing)
 ```
 docker-compose up --build --scale task-manager-api=3 
 ```
