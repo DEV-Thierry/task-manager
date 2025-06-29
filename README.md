@@ -118,7 +118,7 @@ Após a execução do script, você precisa realizar um passo manual crucial:
 
 ## 💡 Comandos Importantes
 
-### Backend (na pasta `[NomeDoProjeto]-backend/` ou `[NomeDoProjeto]-backend/Presentation/` conforme o comando)
+### Backend (na pasta `tasks-manager-backend/` ou `tasks-manager-backend/Presentation/` conforme o comando)
 
 - **Compilar o projeto:**
   ```bash
@@ -131,22 +131,22 @@ Após a execução do script, você precisa realizar um passo manual crucial:
   # dotnet run
   ```
 - **Adicionar uma nova Migration:**
-  _(Execute da raiz da solução do backend: `[NomeDoProjeto]-backend/`)_
+  _(Execute da raiz da solução do backend: `tasks-manager-backend/`)_
   ```bash
   dotnet ef migrations add [NomeDaSuaMigration] -p Infrastructure -s Presentation
   ```
 - **Aplicar Migrations ao Banco de Dados:**
-  _(Execute da raiz da solução do backend: `[NomeDoProjeto]-backend/`)_
+  _(Execute da raiz da solução do backend: `tasks-manager-backend/`)_
   ```bash
   dotnet ef database update -p Infrastructure -s Presentation
   ```
 - **Remover a última Migration (CUIDADO!):**
-  _(Execute da raiz da solução do backend: `[NomeDoProjeto]-backend/`)_
+  _(Execute da raiz da solução do backend: `tasks-manager-backend/`)_
   ```bash
   dotnet ef migrations remove -p Infrastructure -s Presentation
   ```
 - **Atualizar o banco de dados para uma migration específica (CUIDADO!):**
-  _(Execute da raiz da solução do backend: `[NomeDoProjeto]-backend/`)_
+  _(Execute da raiz da solução do backend: `tasks-manager-backend/`)_
   ```bash
   dotnet ef database update [NomeDaMigrationAlvo] -p Infrastructure -s Presentation
   ```
@@ -155,7 +155,7 @@ Após a execução do script, você precisa realizar um passo manual crucial:
   dotnet restore
   ```
 
-### Frontend (na pasta `[NomeDoProjeto]-frontend/`)
+### Frontend (na pasta `tasks-manager-frontend/`)
 
 - **Instalar dependências:**
   ```bash
