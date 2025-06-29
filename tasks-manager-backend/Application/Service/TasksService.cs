@@ -32,25 +32,10 @@ public class TasksService
         });
     }
 
-    public async Task<IEnumerable<TaskDto>> GetTasksByFilterAsync(string filter)
+    public async Task<IEnumerable<TaskDto>> GetTasksByFilterAsync()
     {
-        IEnumerable<Tasks> tasks;
+        var tasks = await _tasksRepository.GetAllAsync();
 
-        switch (filter.ToLower())
-        {
-            case "pending":
-                tasks = await _tasksRepository.GetByStatusAsync("pending");
-                break;
-            case "completed":
-                tasks = await _tasksRepository.GetByStatusAsync("completed");
-                break;
-            case "due_today":
-                tasks = await _tasksRepository.GetDueTodayAsync();
-                break;
-            default:
-                tasks = await _tasksRepository.GetAllAsync();
-                break;
-        }
         return tasks.Select(t => new TaskDto
         {
             Id = t.Id,

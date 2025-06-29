@@ -19,9 +19,9 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetTasks([FromQuery] string filter = null)
+        public async Task<IActionResult> GetTasks()
         {
-            var tasks = await _tasksService.GetTasksByFilterAsync(filter);
+            var tasks = await _tasksService.GetTasksByFilterAsync();
             return Ok(tasks);
         }
 
