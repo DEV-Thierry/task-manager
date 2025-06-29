@@ -1,4 +1,4 @@
-# Projeto E-commerce Full-Stack
+# Projeto Task Manager Full-Stack
 
 Este é um projeto full-stack construído com **React (Vite/TypeScript)** para o frontend e **C# (.NET Web API)** com **Clean Architecture** para o backend, utilizando **SQL Server** para o banco de dados. O projeto visa demonstrar boas práticas de desenvolvimento, performance, manutenibilidade, segurança e gerenciamento de banco de dados.
 
@@ -32,15 +32,18 @@ O projeto adota uma arquitetura de "monorepo leve", com o frontend e o backend e
 │ ├── src/
 │ │ ├── components/
 │ │ ├── context/ # Contexto de Autenticação
-│ │ ├── models/ # Interfaces de DTOs do frontend
+│ │ ├── factories/ # Pattern Factory
+│ │ ├── hooks/ # hoos personalizados
+│ │ ├── models/ # Entidades
 │ │ ├── pages/ # Páginas (Home, Login, Register)
-│ │ ├── routes/ # Definições de rotas (se complexo)
+│ │ ├── routes/ # Definições de rotas
 │ │ ├── services/ # Configuração do Axios para API
+│ │ ├── strategies/ # Pattern Strategy
+│ │ ├── theme/ # tema do chakra ui
 │ │ ├── App.css
 │ │ ├── App.tsx
 │ │ ├── dockerfile
 │ │ ├── main.tsx # Ponto de entrada do React
-│ │ └── theme.ts # Configuração do Chakra UI
 │ ├── index.html
 │ ├── package.json
 │ └── tsconfig.json
@@ -53,10 +56,10 @@ O projeto adota uma arquitetura de "monorepo leve", com o frontend e o backend e
 │ └── Interfaces/ # Contratos (interfaces de repositórios)
 ├── Application/ # Camada de Aplicação
 │ ├── Commands/ # Casos de uso de escrita (AuthCommands)
-│ ├── DTOs/ # Data Transfer Objects (ProdutoDto)
-│ └── Queries/ # Casos de uso de consulta (ProdutoQueries)
+│ └── Services/ # Service utilizado nos controllers
 ├── Infrastructure/ # Camada de Infraestrutura
-│ ├── Data/ # DbContext e Migrations do EF Core
+│ ├── Data/ # DbContext
+│ ├── Migrations/ # Migrations do banco
 │ └── Repositories/ # Implementações de repositórios (ProdutoRepository, UserRepository)
 ├── Presentation/ # Camada de Apresentação (API REST)
 │ ├── Controllers/ # Endpoints da API (AuthController, ProdutosController)
@@ -89,7 +92,7 @@ Após a execução do script, você precisa realizar um passo manual crucial:
 
 1.  **Gerar e Aplicar a Migration Inicial:**
     - No terminal, navegue até a **raiz da solução do backend**: `cd [NomeDoProjeto]/[NomeDoProjeto]-backend/`.
-    - Crie a migration inicial para criar a tabela de usuários e outras tabelas necessárias:
+    - Crie a migration inicial para criar a tabela de usuários e outras tabelas necessárias: (caso nao exista)
       ```bash
       dotnet ef migrations add InitialSchema -p Infrastructure -s Presentation
       ```
