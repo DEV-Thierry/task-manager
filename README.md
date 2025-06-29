@@ -27,8 +27,8 @@ Este é um projeto full-stack construído com **React (Vite/TypeScript)** para o
 O projeto adota uma arquitetura de "monorepo leve", com o frontend e o backend em pastas separadas na raiz do projeto.
 
 ```
-task-manager/
-├── task-manager-frontend/             # Projeto React (Vite + TypeScript)
+tasks-manager/
+├── tasks-manager-frontend/             # Projeto React (Vite + TypeScript)
 │   ├── public/
 │   ├── src/
 │   │   ├── components/                # Componentes reutilizáveis
@@ -41,7 +41,7 @@ task-manager/
 │   │   ├── services/                  # Serviços/API (Axios)
 │   │   ├── strategies/                # Design Pattern: Strategy
 │   │   ├── theme/                     # Temas do Chakra UI
-│   │   │   └── App.css
+│   │   │   └── index.ts
 │   │   ├── App.tsx
 │   │   ├── main.tsx                  # Ponto de entrada do React
 │   │   └── dockerfile
@@ -49,9 +49,9 @@ task-manager/
 │   ├── package.json
 │   └── tsconfig.json
 │
-├── task-manager-backend/              # Projeto C# (.NET Web API com Clean Architecture)
+├── tasks-manager-backend/              # Projeto C# (.NET Web API com Clean Architecture)
 │   ├── dockerfile
-│   ├── task-manager.sln               # Solução .NET
+│   ├── tasks-manager.sln               # Solução .NET
 │   ├── Domain/                        # Camada de Domínio
 │   │   ├── Entities/                  # Entidades (Produto, Categoria, Usuário, etc.)
 │   │   └── Interfaces/               # Contratos (interfaces de repositório)
