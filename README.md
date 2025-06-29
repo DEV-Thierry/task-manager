@@ -86,8 +86,14 @@ Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 Este projeto adota uma estrutura de monorepo. Você pode configurá-lo e rodá-lo seguindo estes passos:
 
 1.  **Baixe o Projeto:** Clone este repositório ou baixe o código-fonte.
-2.  Rode o comando : docker-compose up --build
-3.  (opcional) docker-compose up --build --scale task-manager-api=3 # replica a API para 3 instâncias (load balancing)
+2.  Rode o comando :
+```
+ docker-compose up --build
+```
+4.  (opcional)
+```
+docker-compose up --build --scale task-manager-api=3 # replica a API para 3 instâncias (load balancing)
+```
 
 ### **Configuração Pós-Setup (Importante!)**
 
