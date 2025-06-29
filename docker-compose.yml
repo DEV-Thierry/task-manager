@@ -1,0 +1,58 @@
+services:
+  # --- Servico 1: Load Balancer ---
+  load-balancer:
+    image: nginx:alpine
+    container_name: load_balancer
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - task-manager-api
+    networks:
+      - app-network
+
+  # --- Servico 2: Web Services 1 ---
+  task-manager-api:
+    build: ./tasks-manager-backend
+    expose:
+      - "80"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__SqlServerConnection=Server=db;Database=taskmanager;User=sa;Password=Your_password123;TrustServerCertificate=True
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - app-network
+
+  # --- Servico 3: Banco de Dados ---
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=Your_password123
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - db_data:/var/opt/mssql
+    networks:
+      - app-network
+
+  # --- Servico 4: Frontend ---
+  taskmanager-frontend:
+    build: ./tasks-manager-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - load-balancer
+    environment:
+      - VITE_API_URL=http://localhost:8080/api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  db_data:
